@@ -4,8 +4,50 @@
              xmlns:local="clr-namespace:TipCalculator"
              x:Class="TipCalculator.MainPage">
 
-	<Label Text="Welcome to Xamarin.Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
-
+    <TableView>
+        <TableSection
+            Title="Datos">
+            <EntryCell
+                x:Name="Total"
+                Placeholder="$0.0"
+                Label="Total:"/>
+            <EntryCell
+                x:Name="Propina"
+                Label="Propina(%):"/>
+            <EntryCell
+                x:Name="NumPersonas"
+                Label="# de personas"/>
+        </TableSection>
+        <TableSection>
+            <ViewCell>
+                <ViewCell.View>
+                    <StackLayout>
+                        <Button
+                            x:Name="btnCalcular"
+                            Text="¡Calcular!"/>
+                    </StackLayout>
+                </ViewCell.View>
+            </ViewCell>
+        </TableSection>
+        <TableSection
+            Title="Resultado">
+            <TextCell
+                Text="Propina"
+                Detail="$0.0"
+                x:Name="lblPropina"
+                ></TextCell>
+            <TextCell
+                x:Name="lblTotal"
+                Text="Total"
+                Detail="$0.0"></TextCell>
+            <TextCell
+                x:Name="lblPropinaPorPersona"
+                Text="Propina por persona"
+                Detail="$0.0"></TextCell>
+            <TextCell
+                x:Name="lblTotalPorPersona"
+                Text="Total por persona"
+                Detail="$0.0"></TextCell>
+        </TableSection>
+    </TableView>
 </ContentPage>

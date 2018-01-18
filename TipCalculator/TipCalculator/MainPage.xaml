@@ -27,7 +27,8 @@
                     <StackLayout>
                         <Button
                             x:Name="btnCalcular"
-                            Text="¡Calcular!"/>
+                            Text="¡Calcular!"
+                            Command="{Binding OperacionesCommand}"/>
                     </StackLayout>
                 </ViewCell.View>
             </ViewCell>

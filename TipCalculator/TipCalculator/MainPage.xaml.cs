@@ -8,18 +8,13 @@ namespace TipCalculator
         public MainPage()
 		{
 			InitializeComponent();
-            tipModel = new TipModel();
+            tipModel = new TipModel
+            {
+                Total = 100,
+                Propina = 5,
+                NumPersonas = 2
+            };
             this.BindingContext = tipModel;
-            btnCalcular.Clicked += BtnCalcular_Clicked;
 		}
-
-        private void BtnCalcular_Clicked(object sender, System.EventArgs e)
-        {
-            tipModel.TotalPropina = tipModel.Total * tipModel.Propina / 100;
-            DisplayAlert("a", tipModel.TotalPropina+"", "s");
-            tipModel.MtoTotal = tipModel.TotalPropina + tipModel.Total;
-            tipModel.PropinaPorPersona = tipModel.TotalPropina / tipModel.NumPersonas;
-            tipModel.TotalPorPersona = tipModel.MtoTotal / tipModel.NumPersonas;
-        }
     }
 }

@@ -2,8 +2,13 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:TipCalculator"
+             xmlns:Convert="clr-namespace:TipCalculator.Converts"
              x:Class="TipCalculator.MainPage">
-
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Convert:DecimalToMoney x:Key="toMoney"></Convert:DecimalToMoney>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <TableView>
         <TableSection
             Title="Datos">
@@ -37,21 +42,21 @@
             Title="Resultado">
             <TextCell
                 Text="Propina"
-                Detail="{Binding TotalPropina}"
+                Detail="{Binding TotalPropina,Converter={StaticResource toMoney}}"
                 x:Name="lblPropina"
                 ></TextCell>
             <TextCell
                 x:Name="lblTotal"
                 Text="Total"
-                Detail="{Binding MtoTotal}"></TextCell>
+                Detail="{Binding MtoTotal,Converter={StaticResource toMoney}}"></TextCell>
             <TextCell
                 x:Name="lblPropinaPorPersona"
                 Text="Propina por persona"
-                Detail="{Binding PropinaPorPersona}"></TextCell>
+                Detail="{Binding PropinaPorPersona, Converter={StaticResource toMoney}}"></TextCell>
             <TextCell
                 x:Name="lblTotalPorPersona"
                 Text="Total por persona"
-                Detail="{Binding TotalPorPersona}"></TextCell>
+                Detail="{Binding TotalPorPersona, Converter={StaticResource toMoney}}"></TextCell>
         </TableSection>
     </TableView>
 </ContentPage>

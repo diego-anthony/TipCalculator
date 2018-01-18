@@ -10,13 +10,16 @@
             <EntryCell
                 x:Name="Total"
                 Placeholder="$0.0"
-                Label="Total:"/>
+                Label="Total:"
+                Text="{Binding Total}"/>
             <EntryCell
                 x:Name="Propina"
-                Label="Propina(%):"/>
+                Label="Propina(%):"
+                Text="{Binding Propina}"/>
             <EntryCell
                 x:Name="NumPersonas"
-                Label="# de personas"/>
+                Label="# de personas"
+                Text="{Binding NumPersonas}"/>
         </TableSection>
         <TableSection>
             <ViewCell>
@@ -33,21 +36,21 @@
             Title="Resultado">
             <TextCell
                 Text="Propina"
-                Detail="$0.0"
+                Detail="{Binding TotalPropina}"
                 x:Name="lblPropina"
                 ></TextCell>
             <TextCell
                 x:Name="lblTotal"
                 Text="Total"
-                Detail="$0.0"></TextCell>
+                Detail="{Binding MtoTotal}"></TextCell>
             <TextCell
                 x:Name="lblPropinaPorPersona"
                 Text="Propina por persona"
-                Detail="$0.0"></TextCell>
+                Detail="{Binding PropinaPorPersona}"></TextCell>
             <TextCell
                 x:Name="lblTotalPorPersona"
                 Text="Total por persona"
-                Detail="$0.0"></TextCell>
+                Detail="{Binding TotalPorPersona}"></TextCell>
         </TableSection>
     </TableView>
 </ContentPage>

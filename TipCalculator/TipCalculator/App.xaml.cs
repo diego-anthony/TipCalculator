@@ -13,8 +13,8 @@ namespace TipCalculator
 		{
 			InitializeComponent();
 
-			MainPage = new TipCalculator.MainPage();
-		}
+            MainPage = new MainPage();
+        }
 
 		protected override void OnStart ()
 		{

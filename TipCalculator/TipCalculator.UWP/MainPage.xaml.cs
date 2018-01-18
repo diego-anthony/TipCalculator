@@ -21,7 +21,7 @@ namespace TipCalculator.UWP
         {
             this.InitializeComponent();
 
-            LoadApplication(new TipCalculator.App());
+            LoadApplication(new TipModel.App());
         }
     }
 }
